@@ -1,10 +1,9 @@
-import adaptador
+from repo_user import Repo_user
 
-
-def crear_user(user_id, nombre, correo, contrasena):
-    db = adaptador.get_db()
-    cursor = db.cursor()
-    statement = 'INSERT INTO users (user_id, nombre, correo, contrasena) VALUES (?,?,?,?)'
-    cursor.execute(statement, [user_id, nombre, correo, contrasena])
-    db.commit()
-    return True
+class User:
+    def __init__(self, user_id, nombre, correo, contrasena):
+        self.user_id = user_id
+        self.nombre = nombre
+        self.correo = correo
+        self.contrasena = contrasena
+        
