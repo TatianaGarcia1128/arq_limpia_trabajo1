@@ -34,3 +34,13 @@ class MySQLUserRepository:
 
         for table in tables:
             cursor.execute(table)
+
+    def ingresar_datos(self):
+        insert = 'INSERT INTO users(user_id, nombre, correo, contrasena) \
+                 VALUES  (1, "Tati Garcia", "jtati@gmail.com", "78869"), \
+                        (2, "Santi Salamanca", "santis@gmail.com", "12132"), \
+                        (3, "Marlon Yela", "myela@gmail.com", "97438")'  
+        cursor = self._get_db()
+        cursor.execute(insert)
+        cursor.commit()
+        
